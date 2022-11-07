@@ -18,7 +18,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: dist-files
+          name: dist-folder
           path: dist
   build:
     needs: test
@@ -37,7 +37,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v3
         with:
-          name: dist-files
+          name: dist-folder
       - name: Output Contents
         run: ls
       - name: Deploy
