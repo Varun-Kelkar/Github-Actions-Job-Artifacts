@@ -8,10 +8,11 @@ Action used - actions/upload-artifact
 
 
 ### Uploading Artifacts
-
+```bash
 steps: 
     -   name: <Step Name>
         uses: actions/upload-artifact@v3 <Action Name>
         with:
             name: dist-files <Name of the Artifact>
             path: dist <Files that we want to upload>
+```
