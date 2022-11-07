@@ -2,7 +2,7 @@ name: Deploy website
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -15,6 +15,13 @@ jobs:
         run: npm run lint
       - name: Test code
         run: npm run test
+      - name: Upload Artifacts
+        uses: actions/upload-artifacts@v3
+        with:
+          name: dist-files
+          path: |
+            dist
+            package.json
   build:
     needs: test
     runs-on: ubuntu-latest
