@@ -16,3 +16,12 @@ steps:
             name: dist-files <Name of the Artifact>
             path: dist <Files that we want to upload>
 ```
+
+### Downloading Artifacts
+```bash
+steps:
+    - name: <Step Name>
+      uses: actions/download-artifact@v3 <Action Name>
+        with:
+          name: dist-files <Name of the Artifact should be same as the one used to upload>
+```
